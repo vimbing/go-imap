@@ -92,7 +92,7 @@ func (d *Dialer) runIdleEvent(data []byte, handler *IdleHandler) error {
 // StartIdle starts IDLE monitoring with automatic reconnection and timeout handling
 func (d *Dialer) StartIdle(handler *IdleHandler) error {
 	go func() {
-		ticker := time.NewTicker(5 * time.Minute)
+		ticker := time.NewTicker(25 * time.Second)
 		defer ticker.Stop()
 
 		for {
